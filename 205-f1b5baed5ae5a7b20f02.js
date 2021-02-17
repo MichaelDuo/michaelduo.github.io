@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[205],{J0Pi:function(o,n,i){"use strict";function e(){console.log("Say Something")}i.r(n),i.d(n,"saySomething",(function(){return e})),console.log("HelloWorld, this is imported")}}]);
+//# sourceMappingURL=205-f1b5baed5ae5a7b20f02.js.map
