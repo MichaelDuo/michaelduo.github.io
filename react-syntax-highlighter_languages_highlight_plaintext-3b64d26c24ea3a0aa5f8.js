@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[147],{ROUN:function(t,e){t.exports=function(t){return{name:"Plain text",aliases:["text","txt"],disableAutodetect:!0}}}}]);
+//# sourceMappingURL=react-syntax-highlighter_languages_highlight_plaintext-3b64d26c24ea3a0aa5f8.js.map
