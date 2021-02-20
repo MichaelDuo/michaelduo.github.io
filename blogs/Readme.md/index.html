@@ -13,6 +13,7 @@
 <li>tags: tags should be separated by ‘,’, a tag should not include any spaces, case is ignored.</li>
 <li>type(optional): if not specified, it will be regarded as a markdown blog, if set to <span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">jsx</code></span></span>, the blog file will be look up by the <span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">./src/${path}</code></span></span></li>
 <li>brief(optional): The excerpt that will be displayed on the home page.</li>
+<li>score: score of the blog, blogs with score &gt;=90 will be displayed on home page, blogs with score &lt;0 will be hidden.</li>
 </ul>
 <p>Frontmatter example:</p>
 <pre style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-text">---
@@ -22,12 +23,11 @@ date: 2019-05-04
 title: This is a jsx blog
 tags: featured
 brief: This is a jsx blog brief
+score: 90
 ---</code></pre>
 <h2 class="style-module--h2--125WJ">Adding a React component in .md file</h2>
 <pre style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-text">{{ &quot;component&quot;: &quot;rendering-test/myComponent&quot;}}</code></pre>
 <p>The path will be looked under <span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">src/blogComponent</code></span></span></p>
-<h2 class="style-module--h2--125WJ">What is being displayed on home page?</h2>
-<p>Only blogs contains <span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">featured</code></span></span> tag will be displayed on the home page. All blogs will be displayed under ‘All Posts’ tab.</p>
 <h2 class="style-module--h2--125WJ">How date is being inserted?</h2>
 <p>All blogs should start with a <span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">h1</code></span></span> tag, as the renderer will look for the first <span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">h1</code></span></span> tag in the tree, and insert the date underneath.</p>
 <h2 class="style-module--h2--125WJ">JSX type notes</h2>
