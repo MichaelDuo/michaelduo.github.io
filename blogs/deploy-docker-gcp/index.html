@@ -51,9 +51,9 @@
 <p>Create GKE cluster via web console</p>
 <h2 class="style-module--h2--125WJ">Deploy the sample app to the cluster</h2>
 <p>In <strong>cloud shell</strong>
-<span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">kubectl create deployment hello-app —image=gcr.io/${PROJECT_ID}/hello-app:v1</code></span></span>
-<span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">kubectl scale deployment hello-app —replicas=3</code></span></span>
-<span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">kubectl autoscale deployment hello-app —cpu-percent=80 —min=1 —max=5</code></span></span></p>
+<span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">kubectl create deployment hello-app —image=gcr.io/${PROJECT_ID}/hello-app:v1</code></span></span></p>
+<p><span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">kubectl scale deployment hello-app —replicas=3</code></span></span></p>
+<p><span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">kubectl autoscale deployment hello-app —cpu-percent=80 —min=1 —max=5</code></span></span></p>
 <blockquote>
 <p>Log pods:
 <span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">kubectl get pods</code></span></span></p>
@@ -61,17 +61,19 @@
 <p>Or using UI:
 Click <span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">Deploy</code></span></span> Button, and follow the instructions.</p>
 <h2 class="style-module--h2--125WJ">Expose the sample app to the internet.</h2>
-<p>On UI, click actions-&gt;Expose.
-Set target port to application port.
-Service type set to load-balancer.
-Done</p>
+<ol>
+<li>On UI, click actions-&gt;Expose.</li>
+<li>Set target port to application port.</li>
+<li>Service type set to load-balancer.</li>
+<li>Done</li>
+</ol>
 <p>In service tab, External endpoints can be accessed via internet.</p>
 <h2 class="style-module--h2--125WJ">Deploy a new version of the sample app.</h2>
-<p><span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">docker build -t gcr.io/${PROJECT_ID}/hello-app:v2 .</code></span></span>
-<span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">docker push gcr.io/${PROJECT_ID}/hello-app:v2</code></span></span>
-Rolling update:
-In console UI:
-Actions-&gt;Rolling update
+<p><span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">docker build -t gcr.io/${PROJECT_ID}/hello-app:v2 .</code></span></span><br/>
+<span class=" border px-1"><span style="display:inline-block;overflow-x:none;background:#fefefe;color:#545454;padding:0px"><code class="language-c">docker push gcr.io/${PROJECT_ID}/hello-app:v2</code></span></span></p>
+<p>Rolling update:<br/>
+In console UI:<br/>
+Actions-&gt;Rolling update<br/>
 Set new image url</p>
 <h2 class="style-module--h2--125WJ">Clean up</h2>
 <ol>
